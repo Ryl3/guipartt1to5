@@ -220,33 +220,6 @@ public class loginform extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void miniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseClicked
-        setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_miniMouseClicked
-
-    private void miniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseEntered
-
-    }//GEN-LAST:event_miniMouseEntered
-
-    private void miniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseExited
-
-    }//GEN-LAST:event_miniMouseExited
-
-    private void exMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseClicked
-        int x = JOptionPane.showConfirmDialog(null, "Confirm Exit");
-        if(x== JOptionPane.YES_OPTION){
-                System.exit(0);
-        }
-    }//GEN-LAST:event_exMouseClicked
-
-    private void exMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseEntered
-
-    }//GEN-LAST:event_exMouseEntered
-
-    private void exMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseExited
-
-    }//GEN-LAST:event_exMouseExited
-
     private void cancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseEntered
        buttonBorderAnimation(cancel);
     }//GEN-LAST:event_cancelMouseEntered
@@ -268,6 +241,33 @@ public class loginform extends javax.swing.JFrame {
         this.dispose();
         bd.setVisible(true);
     }//GEN-LAST:event_loginMouseClicked
+
+    private void exMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseExited
+
+    }//GEN-LAST:event_exMouseExited
+
+    private void exMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseEntered
+
+    }//GEN-LAST:event_exMouseEntered
+
+    private void exMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseClicked
+        int x = JOptionPane.showConfirmDialog(null, "Confirm Exit");
+        if(x== JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_exMouseClicked
+
+    private void miniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseExited
+
+    }//GEN-LAST:event_miniMouseExited
+
+    private void miniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseEntered
+
+    }//GEN-LAST:event_miniMouseEntered
+
+    private void miniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseClicked
+        setState(JFrame.ICONIFIED);
+    }//GEN-LAST:event_miniMouseClicked
 
     /**
      * @param args the command line arguments

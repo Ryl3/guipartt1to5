@@ -35,12 +35,14 @@ public class home extends javax.swing.JFrame {
         setting = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        header = new javax.swing.JPanel();
-        mini = new javax.swing.JLabel();
-        ex = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        header = new javax.swing.JPanel();
+        close = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        minus = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         body = new javax.swing.JPanel();
         mainbod = new javax.swing.JDesktopPane();
 
@@ -122,55 +124,16 @@ public class home extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(178, 34, 34));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/restaurant-cafe-exterior-building100.png"))); // NOI18N
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 140, 89));
-
-        navi.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 110));
-
-        jPanel1.add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 550));
-
-        header.setBackground(new java.awt.Color(255, 0, 0));
-        header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        mini.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        mini.setForeground(new java.awt.Color(240, 240, 240));
-        mini.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mini.setText("—");
-        mini.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                miniMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                miniMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                miniMouseExited(evt);
-            }
-        });
-        header.add(mini, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 40, 40));
-
-        ex.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        ex.setForeground(new java.awt.Color(240, 240, 240));
-        ex.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ex.setText("x");
-        ex.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                exMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                exMouseExited(evt);
-            }
-        });
-        header.add(ex, new org.netbeans.lib.awtextra.AbsoluteConstraints(672, 0, 40, 40));
-
-        jPanel3.setBackground(new java.awt.Color(255, 0, 0));
+        jPanel3.setBackground(new java.awt.Color(178, 34, 34));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel3MouseExited(evt);
             }
         });
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -179,9 +142,64 @@ public class home extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Dont Click");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 120, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 140, -1));
 
-        header.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 60));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/restaurant-cafe-exterior-building100.png"))); // NOI18N
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 140, 89));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 110));
+
+        navi.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 110));
+
+        jPanel1.add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 550));
+
+        header.setBackground(new java.awt.Color(255, 0, 0));
+        header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        close.setBackground(new java.awt.Color(255, 0, 0));
+        close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                closeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                closeMouseExited(evt);
+            }
+        });
+        close.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("x");
+        close.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 20, 30));
+
+        header.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 40, 30));
+
+        minus.setBackground(new java.awt.Color(255, 0, 0));
+        minus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minusMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                minusMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                minusMouseExited(evt);
+            }
+        });
+        minus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("-");
+        minus.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 20, 30));
+
+        header.add(minus, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 40, 30));
 
         jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 60));
 
@@ -264,33 +282,6 @@ public class home extends javax.swing.JFrame {
        dashbrd.setBackground(navcol);
     }//GEN-LAST:event_dashbrdMouseExited
 
-    private void exMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseEntered
- 
-    }//GEN-LAST:event_exMouseEntered
-
-    private void exMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseExited
-       
-    }//GEN-LAST:event_exMouseExited
-
-    private void miniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseEntered
-        
-    }//GEN-LAST:event_miniMouseEntered
-
-    private void miniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseExited
-       
-    }//GEN-LAST:event_miniMouseExited
-
-    private void miniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseClicked
-        setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_miniMouseClicked
-
-    private void exMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseClicked
-        int x = JOptionPane.showConfirmDialog(null, "Confirm Exit");
-        if(x== JOptionPane.YES_OPTION){
-                System.exit(0);
-        }
-    }//GEN-LAST:event_exMouseClicked
-
     private void settingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingMouseClicked
         settings st = new settings();
         mainbod.add(st).setVisible(true);
@@ -308,6 +299,41 @@ public class home extends javax.swing.JFrame {
         acchistory acch = new acchistory();
         mainbod.add(acch).setVisible(true);
     }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseEntered
+        close.setBackground(navcol);
+    }//GEN-LAST:event_closeMouseEntered
+
+    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
+        int x = JOptionPane.showConfirmDialog(null, "Confirm Exit");
+        if(x== JOptionPane.YES_OPTION){
+                System.exit(0);
+        }
+    }//GEN-LAST:event_closeMouseClicked
+
+    private void closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseExited
+       close.setBackground(headercol);
+    }//GEN-LAST:event_closeMouseExited
+
+    private void minusMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minusMouseEntered
+       minus.setBackground(navcol);
+    }//GEN-LAST:event_minusMouseEntered
+
+    private void minusMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minusMouseExited
+       minus.setBackground(headercol);
+    }//GEN-LAST:event_minusMouseExited
+
+    private void minusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minusMouseClicked
+       setState(JFrame.ICONIFIED);
+    }//GEN-LAST:event_minusMouseClicked
+
+    private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseEntered
+        jPanel3.setBackground(mainbodcol);
+    }//GEN-LAST:event_jPanel3MouseEntered
+
+    private void jPanel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseExited
+        jPanel3.setBackground(navcol);
+    }//GEN-LAST:event_jPanel3MouseExited
 
     /**
      * @param args the command line arguments
@@ -346,19 +372,21 @@ public class home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel body;
+    private javax.swing.JPanel close;
     private javax.swing.JPanel dashbrd;
-    private javax.swing.JLabel ex;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JDesktopPane mainbod;
-    private javax.swing.JLabel mini;
+    private javax.swing.JPanel minus;
     private javax.swing.JPanel navi;
     private javax.swing.JPanel reprts;
     private javax.swing.JPanel setting;

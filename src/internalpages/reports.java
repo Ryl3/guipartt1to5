@@ -1,8 +1,7 @@
 package internalpages;
 
 import java.awt.Color;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 
@@ -32,6 +31,8 @@ public class reports extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         status = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        transhistory = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         reportbod = new javax.swing.JDesktopPane();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,9 +61,9 @@ public class reports extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Receipt");
-        receipt.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 150, 28));
+        receipt.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, 28));
 
-        jPanel2.add(receipt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 150, 50));
+        jPanel2.add(receipt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 240, 50));
 
         status.setBackground(new java.awt.Color(178, 34, 34));
         status.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -82,9 +83,31 @@ public class reports extends javax.swing.JInternalFrame {
         jLabel2.setForeground(new java.awt.Color(240, 240, 240));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Status");
-        status.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 150, 28));
+        status.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 230, 28));
 
-        jPanel2.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
+        jPanel2.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
+
+        transhistory.setBackground(new java.awt.Color(178, 34, 34));
+        transhistory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                transhistoryMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                transhistoryMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                transhistoryMouseExited(evt);
+            }
+        });
+        transhistory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Transaction History");
+        transhistory.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 250, 28));
+
+        jPanel2.add(transhistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 250, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 50));
 
@@ -134,15 +157,30 @@ public class reports extends javax.swing.JInternalFrame {
        reportbod.add(rptwo).setVisible(true);
     }//GEN-LAST:event_receiptMouseClicked
 
+    private void transhistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_transhistoryMouseClicked
+        transacthistory tehis = new transacthistory();
+        reportbod.add(tehis).setVisible(true);
+    }//GEN-LAST:event_transhistoryMouseClicked
+
+    private void transhistoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_transhistoryMouseEntered
+       transhistory.setBackground(mainbodcol);
+    }//GEN-LAST:event_transhistoryMouseEntered
+
+    private void transhistoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_transhistoryMouseExited
+       transhistory.setBackground(navcol);
+    }//GEN-LAST:event_transhistoryMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel receipt;
     private javax.swing.JDesktopPane reportbod;
     private javax.swing.JPanel status;
+    private javax.swing.JPanel transhistory;
     // End of variables declaration//GEN-END:variables
 
     private void setState(int ICONIFIED) {

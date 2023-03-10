@@ -44,12 +44,15 @@ public class dashboard extends javax.swing.JInternalFrame {
         tableres = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        calendar = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        seatedit = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         time = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        calendar = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -92,39 +95,39 @@ public class dashboard extends javax.swing.JInternalFrame {
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Add Table Reservation");
-        tableres.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 250, -1));
+        tableres.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, -1));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/icons8-reservation-65.png"))); // NOI18N
-        tableres.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 40));
+        tableres.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 180, 50));
 
-        jPanel2.add(tableres, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 80));
+        jPanel2.add(tableres, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 80));
 
-        calendar.setBackground(new java.awt.Color(102, 0, 0));
-        calendar.addMouseListener(new java.awt.event.MouseAdapter() {
+        seatedit.setBackground(new java.awt.Color(102, 0, 0));
+        seatedit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                calendarMouseClicked(evt);
+                seateditMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                calendarMouseEntered(evt);
+                seateditMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                calendarMouseExited(evt);
+                seateditMouseExited(evt);
             }
         });
-        calendar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        seatedit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Open Calendar");
-        calendar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, -1));
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Pick Seat");
+        seatedit.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, -1));
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/icons8-tear-off-calendar-60.png"))); // NOI18N
-        calendar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 50));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/icons8-table-and-chairs-64.png"))); // NOI18N
+        seatedit.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 180, 50));
 
-        jPanel2.add(calendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 240, 80));
+        jPanel2.add(seatedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 180, 80));
 
         time.setBackground(new java.awt.Color(102, 0, 0));
         time.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -144,13 +147,39 @@ public class dashboard extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Pick Time");
-        time.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, -1));
+        time.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, -1));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/icons8-clock-55.png"))); // NOI18N
-        time.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 40));
+        time.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 180, 50));
 
-        jPanel2.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 240, 80));
+        jPanel2.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 180, 80));
+
+        calendar.setBackground(new java.awt.Color(102, 0, 0));
+        calendar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calendarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                calendarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                calendarMouseExited(evt);
+            }
+        });
+        calendar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/icons8-tear-off-calendar-60.png"))); // NOI18N
+        calendar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 180, 50));
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Open Calendar");
+        calendar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, -1));
+
+        jPanel2.add(calendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 180, 80));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 80));
 
@@ -198,6 +227,19 @@ public class dashboard extends javax.swing.JInternalFrame {
         dashboardpane.add(timep).setVisible(true);
     }//GEN-LAST:event_timeMouseClicked
 
+    private void seateditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seateditMouseClicked
+        seatselection sed = new seatselection();
+        dashboardpane.add(sed).setVisible(true);
+    }//GEN-LAST:event_seateditMouseClicked
+
+    private void seateditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seateditMouseEntered
+       seatedit.setBackground(navcol);
+    }//GEN-LAST:event_seateditMouseEntered
+
+    private void seateditMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seateditMouseExited
+        seatedit.setBackground(mainbodcol);
+    }//GEN-LAST:event_seateditMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel calendar;
@@ -208,8 +250,11 @@ public class dashboard extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel seatedit;
     private javax.swing.JPanel tableres;
     private javax.swing.JPanel time;
     // End of variables declaration//GEN-END:variables
