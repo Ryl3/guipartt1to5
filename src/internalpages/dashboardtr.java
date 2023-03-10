@@ -54,7 +54,6 @@ public class dashboardtr extends javax.swing.JInternalFrame {
         jLabel12 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(720, 410));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,14 +81,18 @@ public class dashboardtr extends javax.swing.JInternalFrame {
         jLabel5.setText("Address:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 100, 30));
 
-        jTextField3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jTextField3.setBackground(new java.awt.Color(178, 34, 34));
+        jTextField3.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(240, 240, 240));
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 290, 30));
 
-        jTextField4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jTextField4.setBackground(new java.awt.Color(178, 34, 34));
+        jTextField4.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(240, 240, 240));
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 290, 30));
 
         done.setBackground(new java.awt.Color(178, 34, 34));
@@ -122,9 +125,13 @@ public class dashboardtr extends javax.swing.JInternalFrame {
 
         jScrollPane1.setViewportBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
+        jTextArea1.setBackground(new java.awt.Color(178, 34, 34));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(240, 240, 240));
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
         jScrollPane1.setViewportView(jTextArea1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 290, -1));
@@ -134,9 +141,11 @@ public class dashboardtr extends javax.swing.JInternalFrame {
         jLabel7.setText("Gender:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 80, 30));
 
-        jTextField5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jTextField5.setBackground(new java.awt.Color(178, 34, 34));
+        jTextField5.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(240, 240, 240));
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 290, 30));
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -164,9 +173,11 @@ public class dashboardtr extends javax.swing.JInternalFrame {
         jLabel10.setText("Contact #:");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 100, 30));
 
-        jTextField6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jTextField6.setBackground(new java.awt.Color(178, 34, 34));
+        jTextField6.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(240, 240, 240));
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
         jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 290, 30));
 
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -174,6 +185,7 @@ public class dashboardtr extends javax.swing.JInternalFrame {
         jLabel11.setText("Status:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, 30));
 
+        jComboBox4.setBackground(new java.awt.Color(240, 240, 240));
         jComboBox4.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
         jComboBox4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -191,10 +203,7 @@ public class dashboardtr extends javax.swing.JInternalFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/cafe-coffee-cafeteria-drink-restaurant-silhouette-table-conversation-png-clipart-removebg-preview.png"))); // NOI18N
         jLabel1.setText("el1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 60, -1, -1));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/pngtree-heart-confetti-on-transparent-background-png-image_4687443-removebg-previewrotated.png"))); // NOI18N
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, 340));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -30, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 410));
 
@@ -225,7 +234,6 @@ public class dashboardtr extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

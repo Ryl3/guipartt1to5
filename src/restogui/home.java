@@ -76,7 +76,7 @@ public class home extends javax.swing.JFrame {
         jLabel1.setText("Reports");
         reprts.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 140, 20));
 
-        navi.add(reprts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 140, 60));
+        navi.add(reprts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 140, 60));
 
         dashbrd.setBackground(new java.awt.Color(178, 34, 34));
         dashbrd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,7 +98,7 @@ public class home extends javax.swing.JFrame {
         jLabel2.setText("Dashboard");
         dashbrd.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 140, 20));
 
-        navi.add(dashbrd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 140, 60));
+        navi.add(dashbrd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 60));
 
         setting.setBackground(new java.awt.Color(178, 34, 34));
         setting.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -120,7 +120,7 @@ public class home extends javax.swing.JFrame {
         jLabel4.setText("Account");
         setting.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 140, 20));
 
-        navi.add(setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 140, 60));
+        navi.add(setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 140, 60));
 
         jPanel2.setBackground(new java.awt.Color(178, 34, 34));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -139,17 +139,17 @@ public class home extends javax.swing.JFrame {
         });
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 10)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Dont Click");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 140, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, -1));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/restaurant-cafe-exterior-building100.png"))); // NOI18N
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 140, 89));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 89));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 110));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 90));
 
         navi.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 110));
 
@@ -200,7 +200,7 @@ public class home extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(240, 240, 240));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("-");
+        jLabel7.setText("—");
         minus.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 20, 30));
 
         header.add(minus, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 40, 30));

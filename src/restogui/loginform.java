@@ -105,7 +105,7 @@ public class loginform extends javax.swing.JFrame {
                 miniMouseExited(evt);
             }
         });
-        jPanel2.add(mini, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 30, 29));
+        jPanel2.add(mini, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 30, 29));
 
         ex.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         ex.setForeground(new java.awt.Color(240, 240, 240));
@@ -122,7 +122,7 @@ public class loginform extends javax.swing.JFrame {
                 exMouseExited(evt);
             }
         });
-        jPanel2.add(ex, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 32, 29));
+        jPanel2.add(ex, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 32, 29));
 
         cancel.setBackground(new java.awt.Color(128, 0, 0));
         cancel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -184,13 +184,19 @@ public class loginform extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(240, 240, 240));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("New User? click here to register!");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 290, 20));
+        jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.red, java.awt.Color.red, java.awt.Color.red, java.awt.Color.red));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 220, 20));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/abstract-red-background-christmas-valentines-layout-design-studio-room-web-template-business-report-with-smooth-circle-gradient-color.jpg"))); // NOI18N
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-270, 0, 930, 470));
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 650, 240);
+        jPanel2.setBounds(0, 0, 660, 240);
 
         jPanel3.setBackground(new java.awt.Color(204, 0, 51));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -200,16 +206,16 @@ public class loginform extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 650, 150));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/2577567.jpg"))); // NOI18N
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-770, 0, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-790, 0, -1, -1));
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(0, 240, 650, 190);
+        jPanel3.setBounds(0, 240, 660, 190);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,6 +274,12 @@ public class loginform extends javax.swing.JFrame {
     private void miniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseClicked
         setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_miniMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        registerform regf = new registerform();
+        this.dispose();
+        regf.setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
