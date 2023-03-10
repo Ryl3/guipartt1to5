@@ -38,6 +38,7 @@ public class home extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         close = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -151,6 +152,9 @@ public class home extends javax.swing.JFrame {
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 110));
 
         navi.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 110));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/downloadsilh-removebg-preview.png"))); // NOI18N
+        navi.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, 310));
 
         jPanel1.add(navi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 550));
 
@@ -382,6 +386,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

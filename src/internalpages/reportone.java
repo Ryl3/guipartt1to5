@@ -7,6 +7,7 @@ package internalpages;
 
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import restogui.reportonedataadd;
 
 /**
  *
@@ -42,6 +43,8 @@ public class reportone extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         save = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        add = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -123,7 +126,7 @@ public class reportone extends javax.swing.JInternalFrame {
         jLabel5.setText("Delete");
         delete.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
-        pael.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 80, 40));
+        pael.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 80, 40));
 
         edit.setBackground(new java.awt.Color(128, 0, 0));
         edit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 0, 0), new java.awt.Color(255, 0, 0), new java.awt.Color(102, 0, 0), new java.awt.Color(255, 0, 0)));
@@ -143,7 +146,7 @@ public class reportone extends javax.swing.JInternalFrame {
         jLabel6.setText("Edit");
         edit.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
-        pael.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 80, 40));
+        pael.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 80, 40));
 
         save.setBackground(new java.awt.Color(128, 0, 0));
         save.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 0, 0), new java.awt.Color(255, 0, 0), new java.awt.Color(102, 0, 0), new java.awt.Color(255, 0, 0)));
@@ -163,7 +166,30 @@ public class reportone extends javax.swing.JInternalFrame {
         jLabel7.setText("Save");
         save.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
-        pael.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 80, 40));
+        pael.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 80, 40));
+
+        add.setBackground(new java.awt.Color(128, 0, 0));
+        add.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 0, 0), new java.awt.Color(255, 0, 0), new java.awt.Color(102, 0, 0), new java.awt.Color(255, 0, 0)));
+        add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addMouseExited(evt);
+            }
+        });
+        add.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Add");
+        add.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
+
+        pael.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 80, 40));
 
         jPanel1.add(pael, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 440));
 
@@ -196,13 +222,29 @@ public class reportone extends javax.swing.JInternalFrame {
        save.setBackground(prebuttoncol);
     }//GEN-LAST:event_saveMouseExited
 
+    private void addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseEntered
+        add.setBackground(buttoncol);
+    }//GEN-LAST:event_addMouseEntered
+
+    private void addMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseExited
+       add.setBackground(prebuttoncol);
+    }//GEN-LAST:event_addMouseExited
+
+    private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
+       reportonedataadd rponedataadd = new reportonedataadd();
+        this.dispose();
+        rponedataadd.setVisible(true);
+    }//GEN-LAST:event_addMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel add;
     private javax.swing.JPanel delete;
     private javax.swing.JPanel edit;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
