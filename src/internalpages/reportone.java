@@ -6,6 +6,8 @@
 package internalpages;
 
 import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import restogui.reportonedataadd;
 
@@ -231,9 +233,10 @@ public class reportone extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_addMouseExited
 
     private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
-       reportonedataadd rponedataadd = new reportonedataadd();
-        this.dispose();
-        rponedataadd.setVisible(true);
+       JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        mainFrame.dispose();
+        reportonedataadd rpoda = new reportonedataadd();
+        rpoda.setVisible(true);
     }//GEN-LAST:event_addMouseClicked
 
 

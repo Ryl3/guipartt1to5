@@ -5,7 +5,6 @@
  */
 package restogui;
 
-import internalpages.reportone;
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -268,9 +267,10 @@ public class reportonedataadd extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void doneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doneMouseClicked
-        reportone rpone = new reportone();
+        home bd = new home();
         this.dispose();
-        rpone.setVisible(true);
+        bd.setVisible(true);
+        
     }//GEN-LAST:event_doneMouseClicked
 
     private void doneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doneMouseEntered
