@@ -269,8 +269,7 @@ public class reportonedataadd extends javax.swing.JFrame {
     private void doneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doneMouseClicked
         home bd = new home();
         this.dispose();
-        bd.setVisible(true);
-        
+        bd.setVisible(true);  
     }//GEN-LAST:event_doneMouseClicked
 
     private void doneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doneMouseEntered
@@ -306,10 +305,10 @@ public class reportonedataadd extends javax.swing.JFrame {
     }//GEN-LAST:event_minusMouseExited
 
     private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-        int x = JOptionPane.showConfirmDialog(null, "Confirm Exit");
-        if(x== JOptionPane.YES_OPTION){
-            System.exit(0);
-        }
+        home bd = new home();
+        this.dispose();
+        bd.setVisible(true); 
+        
     }//GEN-LAST:event_closeMouseClicked
 
     private void closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseEntered

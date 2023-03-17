@@ -297,10 +297,10 @@ public class registerform extends javax.swing.JFrame {
     }//GEN-LAST:event_exMouseExited
 
     private void exMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exMouseClicked
-         int x = JOptionPane.showConfirmDialog(null, "Confirm Exit");
-        if(x== JOptionPane.YES_OPTION){
-                System.exit(0);
-        }
+        loginform loginf = new loginform();
+        this.dispose();
+        loginf.setVisible(true);
+        
     }//GEN-LAST:event_exMouseClicked
 
     private void hyphMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hyphMouseEntered
