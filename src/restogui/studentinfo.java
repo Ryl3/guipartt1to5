@@ -8,6 +8,8 @@ package restogui;
 import config.dbconnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -22,6 +24,16 @@ public class studentinfo extends javax.swing.JFrame {
     public studentinfo() {
         initComponents();
     }
+    
+    public void clear(){
+            id.setText("");
+            name.setText("");
+            address.setText("");
+            contact.setText("");
+            status.setText("");
+    
+    }
+    
  public void displaydata(){
         
         try{
@@ -50,7 +62,10 @@ public class studentinfo extends javax.swing.JFrame {
         status = new javax.swing.JTextField();
         add = new javax.swing.JButton();
         display = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
+        clear = new javax.swing.JButton();
+        id = new javax.swing.JTextField();
+        update = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,13 +73,19 @@ public class studentinfo extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblstudent.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        tblstudent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblstudentMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblstudent);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 0, 590, 510));
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 190, 30));
-        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 190, 30));
-        jPanel1.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 190, 30));
-        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 190, 30));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 30));
+        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 190, 30));
+        jPanel1.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 190, 30));
+        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 190, 30));
 
         add.setText("add");
         add.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +93,7 @@ public class studentinfo extends javax.swing.JFrame {
                 addActionPerformed(evt);
             }
         });
-        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
 
         display.setText("Display");
         display.addActionListener(new java.awt.event.ActionListener() {
@@ -80,10 +101,34 @@ public class studentinfo extends javax.swing.JFrame {
                 displayActionPerformed(evt);
             }
         });
-        jPanel1.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        jPanel1.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
-        jButton3.setText("Delete");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+        delete.setText("Delete");
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 70, -1));
+
+        clear.setText("clear");
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 60, -1));
+
+        id.setEditable(false);
+        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 190, 30));
+
+        update.setText("update");
+        update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -3, 860, 510));
 
@@ -102,7 +147,64 @@ public class studentinfo extends javax.swing.JFrame {
                 + "VALUES ('"+name.getText()+"', '"+address.getText()+"','"+status.getText()+"','"+contact.getText()+"')");
 
         displaydata();
+        clear();
     }//GEN-LAST:event_addActionPerformed
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+        clear();
+    }//GEN-LAST:event_clearActionPerformed
+
+    private void tblstudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblstudentMouseClicked
+       int rowindex = tblstudent.getSelectedRow();
+       if(rowindex<0){
+       
+       }else{
+            TableModel model = tblstudent.getModel();
+                id.setText(""+model.getValueAt(rowindex, 0));
+                name.setText(""+model.getValueAt(rowindex, 1));
+                address.setText(""+model.getValueAt(rowindex, 2));
+                status.setText(""+model.getValueAt(rowindex, 3));
+                contact.setText(""+model.getValueAt(rowindex, 4));
+
+       }
+    }//GEN-LAST:event_tblstudentMouseClicked
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        int rowIndex = tblstudent.getSelectedRow();
+       
+       
+       if(rowIndex < 0){
+           JOptionPane.showMessageDialog(null, "pili sa table dong mura man kag wtf!");
+       }else{
+            TableModel model = tblstudent.getModel();
+            Object value = model.getValueAt(rowIndex, 0);
+            String id = value.toString();
+             int a=JOptionPane.showConfirmDialog(null,"sure oii?");  
+                    if(a==JOptionPane.YES_OPTION){  
+                            dbconnector dbc = new dbconnector();
+                            dbc.deleteData(Integer.parseInt(id));
+                            displaydata();
+                                clear();
+                    }    
+       
+       }
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+       dbconnector dbc = new dbconnector();
+        int num = dbc.updateData("UPDATE tbl_student "
+                + "SET st_name = '"+name.getText()+"', st_address='"+address.getText()+"', "
+                        + "st_status ='"+status.getText()+"', st_contact='"+contact.getText()+"'  "
+                                + "WHERE st_id = '"+id.getText()+"'");
+       
+        if(num == 0){
+           
+        }else{
+           JOptionPane.showMessageDialog(null, "Updated Successfully!");
+           displaydata();
+           clear();
+        }
+    }//GEN-LAST:event_updateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,13 +244,16 @@ public class studentinfo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add;
     private javax.swing.JTextField address;
+    private javax.swing.JButton clear;
     private javax.swing.JTextField contact;
+    private javax.swing.JButton delete;
     private javax.swing.JButton display;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JTextField id;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField name;
     private javax.swing.JTextField status;
     private javax.swing.JTable tblstudent;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }
