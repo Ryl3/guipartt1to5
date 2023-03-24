@@ -43,7 +43,7 @@ public class dbconnector {
     public void deleteData(int id) {
     try {
        
-        PreparedStatement stmt = connection.prepareStatement("DELETE FROM tbl_student WHERE st_id = ?");
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM tbl_customer WHERE st_id = ?");
         stmt.setInt(1, id);
        
         int rowsDeleted = stmt.executeUpdate();

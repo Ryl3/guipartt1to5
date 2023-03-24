@@ -29,9 +29,9 @@ public class studentinfo extends javax.swing.JFrame {
             id.setText("");
             name.setText("");
             address.setText("");
-            contact.setText("");
             status.setText("");
-    
+            contact.setText("");
+     
     }
     
  public void displaydata(){
@@ -39,7 +39,7 @@ public class studentinfo extends javax.swing.JFrame {
         try{
             
         dbconnector dbc = new dbconnector();
-        ResultSet rs = dbc.getData("SELECT * FROM tbl_student");
+        ResultSet rs = dbc.getData("SELECT * FROM tbl_customer");
         tblstudent.setModel(DbUtils.resultSetToTableModel(rs));
         
             }catch(SQLException ex){
@@ -84,7 +84,19 @@ public class studentinfo extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 0, 590, 510));
         jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 30));
         jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 190, 30));
+
+        contact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contactActionPerformed(evt);
+            }
+        });
         jPanel1.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 190, 30));
+
+        status.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusActionPerformed(evt);
+            }
+        });
         jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 190, 30));
 
         add.setText("add");
@@ -142,9 +154,9 @@ public class studentinfo extends javax.swing.JFrame {
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         dbconnector dbc = new dbconnector();
 
-        dbc.insertData("INSERT INTO tbl_student (st_name, st_address, st_contact, st_status) "
+        dbc.insertData("INSERT INTO tbl_customer (st_name, st_address, st_contact, st_status) "
 
-                + "VALUES ('"+name.getText()+"', '"+address.getText()+"','"+status.getText()+"','"+contact.getText()+"')");
+                + "VALUES ('"+name.getText()+"', '"+address.getText()+"','"+contact.getText()+"','"+status.getText()+"')");
 
         displaydata();
         clear();
@@ -163,8 +175,8 @@ public class studentinfo extends javax.swing.JFrame {
                 id.setText(""+model.getValueAt(rowindex, 0));
                 name.setText(""+model.getValueAt(rowindex, 1));
                 address.setText(""+model.getValueAt(rowindex, 2));
-                status.setText(""+model.getValueAt(rowindex, 3));
-                contact.setText(""+model.getValueAt(rowindex, 4));
+                contact.setText(""+model.getValueAt(rowindex, 3));
+                status.setText(""+model.getValueAt(rowindex, 4));
 
        }
     }//GEN-LAST:event_tblstudentMouseClicked
@@ -194,7 +206,7 @@ public class studentinfo extends javax.swing.JFrame {
        dbconnector dbc = new dbconnector();
         int num = dbc.updateData("UPDATE tbl_student "
                 + "SET st_name = '"+name.getText()+"', st_address='"+address.getText()+"', "
-                        + "st_status ='"+status.getText()+"', st_contact='"+contact.getText()+"'  "
+                        + "st_contact ='"+contact.getText()+"', st_status='"+status.getText()+"'  "
                                 + "WHERE st_id = '"+id.getText()+"'");
        
         if(num == 0){
@@ -205,6 +217,14 @@ public class studentinfo extends javax.swing.JFrame {
            clear();
         }
     }//GEN-LAST:event_updateActionPerformed
+
+    private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contactActionPerformed
+
+    private void statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusActionPerformed
 
     /**
      * @param args the command line arguments

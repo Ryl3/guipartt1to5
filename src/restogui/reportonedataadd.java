@@ -5,9 +5,14 @@
  */
 package restogui;
 
+import config.dbconnector;
 import java.awt.Color;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -21,6 +26,28 @@ public class reportonedataadd extends javax.swing.JFrame {
     public reportonedataadd() {
         initComponents();
     }
+    
+    public void displaydata(){
+        
+        try{
+            
+        dbconnector dbc = new dbconnector();
+        ResultSet rs = dbc.getData("SELECT * FROM tbl_customer");
+        Tablecustomer.setModel(DbUtils.resultSetToTableModel(rs));
+        
+            }catch(SQLException ex){
+                System.out.println("Error Message:"+ex);
+         }
+    }
+    
+    public void clear(){
+            id.setText("");
+            name.setText("");
+            fee.setText("");
+            status.setText("");
+            contact.setText("");
+            address.setText("");
+    }
 
         Color navcol = new Color(178,34,34);
         Color headercol = new Color(255,0,0);
@@ -33,14 +60,23 @@ public class reportonedataadd extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
+        delete = new javax.swing.JButton();
+        clear1 = new javax.swing.JButton();
+        update = new javax.swing.JButton();
+        display = new javax.swing.JButton();
+        fee = new javax.swing.JTextField();
+        id = new javax.swing.JTextField();
+        add = new javax.swing.JButton();
+        status = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Tablecustomer = new javax.swing.JTable();
+        contact = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        address = new javax.swing.JTextArea();
         done = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         clear = new javax.swing.JPanel();
@@ -64,81 +100,154 @@ public class reportonedataadd extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 15)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setText("Address:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 140, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 90, 20));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(240, 240, 240));
         jLabel2.setText("Status:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 120, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 80, -1));
+
+        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 15)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel13.setText("ID: ");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 80, 20));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 15)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel3.setText("Reservation Fee:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 140, 20));
+        jLabel3.setText("Fee:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 80, 20));
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 15)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(240, 240, 240));
         jLabel4.setText("Contact #:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 140, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 80, 20));
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(178, 34, 34));
-        jTextField1.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(240, 240, 240));
-        jTextField1.setText("payment");
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        delete.setBackground(new java.awt.Color(178, 34, 34));
+        delete.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        delete.setText("Delete");
+        delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                deleteActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 270, 20));
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 43, 80, 30));
 
-        jTextField2.setBackground(new java.awt.Color(178, 34, 34));
-        jTextField2.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(240, 240, 240));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField2.setText("Enter name here");
-        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        clear1.setBackground(new java.awt.Color(178, 34, 34));
+        clear1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        clear1.setText("clear");
+        clear1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                clear1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 270, 20));
+        jPanel1.add(clear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 90, 50));
 
-        jComboBox1.setBackground(new java.awt.Color(128, 0, 0));
-        jComboBox1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reserved", "Cancelled", "On hold", "Unavailalble" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        update.setBackground(new java.awt.Color(178, 34, 34));
+        update.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        update.setText("update");
+        update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                updateActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 270, 20));
+        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 43, 80, 30));
 
-        jTextField3.setBackground(new java.awt.Color(178, 34, 34));
-        jTextField3.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(240, 240, 240));
-        jTextField3.setText("Enter # here");
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        display.setBackground(new java.awt.Color(178, 34, 34));
+        display.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        display.setText("Display");
+        display.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                displayActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 270, 20));
+        jPanel1.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 43, 80, 30));
 
-        jTextArea1.setBackground(new java.awt.Color(178, 34, 34));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(240, 240, 240));
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Enter address here");
-        jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
-        jScrollPane1.setViewportView(jTextArea1);
+        fee.setBackground(new java.awt.Color(178, 34, 34));
+        fee.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        fee.setForeground(new java.awt.Color(240, 240, 240));
+        fee.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
+        fee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                feeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(fee, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 180, 20));
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 270, 130));
+        id.setBackground(new java.awt.Color(178, 34, 34));
+        id.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        id.setForeground(new java.awt.Color(240, 240, 240));
+        id.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        id.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 180, 20));
+
+        add.setBackground(new java.awt.Color(178, 34, 34));
+        add.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        add.setText("add");
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 90, 50));
+
+        status.setBackground(new java.awt.Color(178, 34, 34));
+        status.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        status.setForeground(new java.awt.Color(240, 240, 240));
+        status.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        status.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
+        status.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusActionPerformed(evt);
+            }
+        });
+        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 180, 20));
+
+        name.setBackground(new java.awt.Color(178, 34, 34));
+        name.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        name.setForeground(new java.awt.Color(240, 240, 240));
+        name.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        name.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 180, 20));
+
+        Tablecustomer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablecustomerMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(Tablecustomer);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 430, 390));
+
+        contact.setBackground(new java.awt.Color(178, 34, 34));
+        contact.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        contact.setForeground(new java.awt.Color(240, 240, 240));
+        contact.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
+        contact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contactActionPerformed(evt);
+            }
+        });
+        jPanel1.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 180, 20));
+
+        address.setBackground(new java.awt.Color(178, 34, 34));
+        address.setColumns(20);
+        address.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        address.setForeground(new java.awt.Color(240, 240, 240));
+        address.setRows(5);
+        address.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 1, true));
+        jScrollPane1.setViewportView(address);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 270, 110));
 
         done.setBackground(new java.awt.Color(178, 34, 34));
         done.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -161,7 +270,7 @@ public class reportonedataadd extends javax.swing.JFrame {
         jLabel6.setText("Done");
         done.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 90, 30));
 
-        jPanel1.add(done, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, 90, 50));
+        jPanel1.add(done, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 90, 50));
 
         clear.setBackground(new java.awt.Color(178, 34, 34));
         clear.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -184,12 +293,12 @@ public class reportonedataadd extends javax.swing.JFrame {
         jLabel7.setText("Clear");
         clear.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 90, 30));
 
-        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, 90, 50));
+        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 90, 50));
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 15)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel8.setText("Cunstomer Name: ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 140, 20));
+        jLabel8.setText("Name: ");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 80, 20));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgnicons/silres-removebg-preview-removebg-preview.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 620, 340));
@@ -250,21 +359,17 @@ public class reportonedataadd extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void feeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_feeActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_nameActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_contactActionPerformed
 
     private void doneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doneMouseClicked
         home bd = new home();
@@ -319,6 +424,85 @@ public class reportonedataadd extends javax.swing.JFrame {
         close.setBackground(headercol);
     }//GEN-LAST:event_closeMouseExited
 
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
+
+    private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
+        displaydata();
+    }//GEN-LAST:event_displayActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        int rowIndex = Tablecustomer.getSelectedRow();
+
+        if(rowIndex < 0){
+            JOptionPane.showMessageDialog(null, "pili sa table dong mura man kag wtf!");
+        }else{
+            TableModel model = Tablecustomer.getModel();
+            Object value = model.getValueAt(rowIndex, 0);
+            String id = value.toString();
+            int a=JOptionPane.showConfirmDialog(null,"sure oii?");
+            if(a==JOptionPane.YES_OPTION){
+                dbconnector dbc = new dbconnector();
+                dbc.deleteData(Integer.parseInt(id));
+                displaydata();
+                clear();
+            }
+
+        }
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        dbconnector dbc = new dbconnector();
+
+        dbc.insertData("INSERT INTO tbl_customer (ID, Name, Status, Fee, Contact, Adress) "
+
+            + "VALUES ('"+name.getText()+"', '"+status.getText()+"','"+fee.getText()+"','"+contact.getText()+"','"+address.getText()+"')");
+
+        displaydata();
+        clear();
+    }//GEN-LAST:event_addActionPerformed
+
+    private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear1ActionPerformed
+        clear();
+    }//GEN-LAST:event_clear1ActionPerformed
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+        dbconnector dbc = new dbconnector();
+        int num = dbc.updateData("UPDATE tbl_customer "
+            + "SET c_name = '"+name.getText()+"', c_address='"+address.getText()+"', "
+            + "c_contact ='"+contact.getText()+"', c_status='"+status.getText()+"'  "
+            +"c_fee ='"+fee.getText()+ "WHERE c_id = '"+id.getText()+"'");
+
+        if(num == 0){
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Updated Successfully!");
+            displaydata();
+            clear();
+        }
+    }//GEN-LAST:event_updateActionPerformed
+
+    private void statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusActionPerformed
+
+    private void TablecustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablecustomerMouseClicked
+         int rowindex = Tablecustomer.getSelectedRow();
+       if(rowindex<0){
+       
+       }else{
+            TableModel model = Tablecustomer.getModel();
+                id.setText(""+model.getValueAt(rowindex, 0));
+                name.setText(""+model.getValueAt(rowindex, 1));
+                status.setText(""+model.getValueAt(rowindex, 2));
+                fee.setText(""+model.getValueAt(rowindex, 3));
+                contact.setText(""+model.getValueAt(rowindex, 4));
+                address.setText(""+model.getValueAt(rowindex, 5));
+                
+       }
+    }//GEN-LAST:event_TablecustomerMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -355,14 +539,23 @@ public class reportonedataadd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Tablecustomer;
+    private javax.swing.JButton add;
+    private javax.swing.JTextArea address;
     private javax.swing.JPanel clear;
+    private javax.swing.JButton clear1;
     private javax.swing.JPanel close;
+    private javax.swing.JTextField contact;
+    private javax.swing.JButton delete;
+    private javax.swing.JButton display;
     private javax.swing.JPanel done;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField fee;
+    private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -373,10 +566,10 @@ public class reportonedataadd extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel minus;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField status;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }
